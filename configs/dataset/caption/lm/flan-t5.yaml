@@ -1,0 +1,4 @@
+lm_name: flant5
+num_feats: 512
+sequential: true
+max_feat_length: 512

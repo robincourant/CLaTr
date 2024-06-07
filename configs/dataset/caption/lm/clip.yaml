@@ -1,0 +1,4 @@
+lm_name: clip
+num_feats: 512
+sequential: true
+max_feat_length: 77

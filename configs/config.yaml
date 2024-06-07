@@ -1,0 +1,25 @@
+defaults:
+  - _self_
+  - dataset: traj+caption
+  - model: clatr
+
+timestamp: ${now:%Y-%m-%d-%H-%M-%S}
+
+outdir: null
+entity: null
+project_name: trajectory-clip
+results_dir: ./results
+data_dir: ./data
+xp_name: ${model.name}_${dataset.caption.lm.lm_name}_${dataset.name}
+log_dir: ${results_dir}/${xp_name}/${timestamp}
+checkpoint_path: null
+
+seed: 42
+num_train_epochs: 251
+log_wandb: true
+batch_size: 32
+num_workers: 8
+
+hydra:
+  run:
+    dir: ./${results_dir}/${xp_name}/${timestamp}

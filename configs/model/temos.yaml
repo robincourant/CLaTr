@@ -1,0 +1,45 @@
+_target_: src.models.temos.TEMOS
+
+name: temos
+
+traj_encoder:
+  _target_: src.models.actor.ACTORStyleEncoder
+  num_feats: ${dataset.num_traj_feats}
+  vae: true
+  latent_dim: 256
+  ff_size: 1024
+  num_layers: 6
+  num_heads: 4
+  dropout: 0.1
+  activation: gelu
+
+text_encoder:
+  _target_: src.models.actor.ACTORStyleEncoder
+  num_feats: ${dataset.caption.lm.num_feats}
+  vae: true
+  latent_dim: 256
+  ff_size: 1024
+  num_layers: 6
+  num_heads: 4
+  dropout: 0.1
+  activation: gelu
+
+traj_decoder:
+  _target_: src.models.actor.ACTORStyleDecoder
+  num_feats: ${dataset.num_traj_feats}
+  latent_dim: 256
+  ff_size: 1024
+  num_layers: 6
+  num_heads: 4
+  dropout: 0.1
+  activation: gelu
+
+vae: true
+
+lmd:
+  recons: 1.0
+  latent: 1.0e-5
+  kl: 1.0e-5
+
+lr: 1e-4
+log_wandb: ${log_wandb}

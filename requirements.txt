@@ -1,0 +1,8 @@
+einops
+evo
+hydra-core
+lightning
+rich
+scikit-learn
+torchtyping
+wandb
