@@ -90,8 +90,6 @@ sh download_checkpoints.sh
 
 ## Usage
 
-Note:
-
 Launch training:
 ```
 HYDRA_FULL_ERROR=1 python src/train.py
