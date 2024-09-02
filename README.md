@@ -105,6 +105,11 @@ Launch feature extraction:
 HYDRA_FULL_ERROR=1 python src/extraction.py checkpoint_path=checkpoints/clatr-e100.ckpt
 ```
 
+Extract checkpoint into submodule checkpoints (`traj_encoder`, `text_encoder`, `traj_decoder`):
+```
+HYDRA_FULL_ERROR=1 python src/extract_ckpt.py checkpoint_path=checkpoints/clatr-e100.ckpt
+```
+
 ## License
 This code is distributed under an [MIT LICENSE](LICENSE).
 
